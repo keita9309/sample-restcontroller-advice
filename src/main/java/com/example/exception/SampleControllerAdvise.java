@@ -15,7 +15,7 @@ public class SampleControllerAdvise {
 
     @ExceptionHandler({BadBloodTypeException.class})  //  独自例外
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ErrorResponse> handleBadBloodTypeException(BadBloodTypeException e, HttpServletRequest request) {
+    public ResponseEntity<Object> handleBadBloodTypeException(BadBloodTypeException e, HttpServletRequest request) {
     	ErrorResponse response = new ErrorResponse();
     	response.setStatus(HttpStatus.BAD_REQUEST.toString());
     	response.setUri(request.getRequestURL().toString());
